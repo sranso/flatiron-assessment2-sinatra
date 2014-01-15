@@ -1,0 +1,11 @@
+%h1 All Spacecats
+%a(href="/spacecats/new")
+  Create a new spacecat
+  - unless @spacecats.empty?
+    %ul#spacecats
+    - @spacecats.each do |spacecat|
+      %li{:id => "spacecat-#{spacecat.id}"}
+        %a(href="/spacecats/#{spacecat.id}")= spacecat.name
+  - else
+    %p No spacecats!
+

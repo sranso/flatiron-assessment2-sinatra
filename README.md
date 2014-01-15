@@ -20,15 +20,27 @@ Now, answer these questions:
 
 What is Sinatra? Where does it run?
 
+  Sinatra is a simple web application framework that allows users to easily create web apps. Requests are sent from locally, on the client-side, and the server-side evaluates the request and sends a response back to the client.
+
 What is a Gemfile? How do you use it in your Sinatra Application? Give step by step instructions.
+  
+  A Gemfile is where we require the gems we need to make the app run. You have to say on line one where to look for the gems (rubygems.org), and then require the gems you want. If there are gems you know you'll only need for production or development, you can group them so that they are not 'over-required' (no need to require something if you don't need it). Once you save Gemfile, you must run "bundle install" in terminal. This will create a file Gemfile.lock.
 
 What is an ORM? What are the basic features of an ORM? Why is it helpful?
 
+  Object-relational mapping. It is a map between objects in our system and the tables in our database. It's helpful because we need a way to talk to the tables in our database--to manipulate and play with them.
+
 What is the public folder? What do we use it for?
+  
+  Public folder is for things the client side will need, such as images css js webfonts etc.
 
 What is REST? Why is it useful?
+  
+  Representational State Transfer. Is a way to visualize and structure your routes so that they make sense according to what they actually do. So, '/spacecats' should show all of the spacecats because that makes sense logically, RESTfully.
 
 Suppose I, with my browser, send an HTTP get request to the route that will render the view of all the SpaceCats. Walk me through step by step how your application handles that request.
+
+  Request is sent from your browser, the client, to the server. App.rb confirms that yes, there is a route matching the one you requested. Inside the do-end of that get method, there is a line @spacecats = Spacecats.all. This sends the server to the database where it gets all spacecats in the database table and saves them in the local variable @spacecats. Next in app.rb there is haml :index, so the server looks to that file index.haml.html to see what it's supposed to evaulate and render to the client's screen. A string will be returned, which is what ultimately gets printed onto the client's screen.
 
 PART 2: SQL
 

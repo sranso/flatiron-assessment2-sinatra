@@ -1,0 +1,7 @@
+%h1 New Spacecat
+
+%form(action="/spacecats" method="POST")
+  %fieldset
+    %legend Create a new spacecat
+    = haml :form, :layout => false
+  %input(type="submit" value="create") or <a href="/spacecats">cancel</a>
