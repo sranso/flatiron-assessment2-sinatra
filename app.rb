@@ -4,6 +4,7 @@ Bundler.require
 require './lib/spacecat.rb'
 
 class App < Sinatra::Application
+  set :database, "sqlite3:///wizards.db"
   set :database, "sqlite3:///spacecats.db"
 
   # show all spacecats

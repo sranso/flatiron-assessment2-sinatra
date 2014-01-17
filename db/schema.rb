@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115190611) do
+ActiveRecord::Schema.define(version: 20140115192750) do
 
   create_table "spacecats", force: true do |t|
     t.string "name"
     t.text   "home_planet"
     t.text   "tagline"
     t.text   "superpower"
+  end
+
+  create_table "wizards", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
